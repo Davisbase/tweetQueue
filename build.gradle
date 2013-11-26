@@ -1,0 +1,32 @@
+/*
+ * Gradle build script for the tweetQueue project.
+ */
+
+// Java plugin docs:
+// http://www.gradle.org/docs/current/userguide/java_plugin.html
+apply plugin: 'java' 
+
+//causes gradle to update the eclipse config with new dependencies.
+//http://www.gradle.org/docs/current/userguide/eclipse_plugin.html
+apply plugin: 'eclipse' 
+
+//if interested, generate the IntelliJ project files instead
+//http://www.gradle.org/docs/current/userguide/idea_plugin.html
+//apply plugin: 'idea'
+
+
+// defines where to look for jarfiles.
+repositories {
+    // Use 'maven central' for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    mavenCentral()
+}
+
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    // The production code uses the SLF4J logging API at compile time
+    // compilation for the 'main' classes looks like this:
+    //compile 'name:version'
+    //here's one we need immediately: junit!
+    testCompile "junit:junit:4.11"
+}
